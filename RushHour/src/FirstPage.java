@@ -65,7 +65,7 @@ public class FirstPage extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\Not Background\\rushhour.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\NotBackground\\rushhour.jpg"));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
@@ -138,17 +138,17 @@ public class FirstPage extends JFrame {
 		contentPane.add(btnGuest);
 
 		JLabel lblLoginbg = new JLabel("");
-		lblLoginbg.setIcon(new ImageIcon("D:\\JavaProject\\butttonLogin.jpg"));
+		lblLoginbg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\buttton.jpg"));
 		lblLoginbg.setBounds(382, 189, 352, 146);
 		contentPane.add(lblLoginbg);
 
 		JLabel lblRegisbg = new JLabel("");
-		lblRegisbg.setIcon(new ImageIcon("D:\\JavaProject\\butttonLogin.jpg"));
+		lblRegisbg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\buttton.jpg"));
 		lblRegisbg.setBounds(382, 331, 352, 146);
 		contentPane.add(lblRegisbg);
 
 		JLabel lblGstbg = new JLabel("");
-		lblGstbg.setIcon(new ImageIcon("D:\\JavaProject\\butttonLogin.jpg"));
+		lblGstbg.setIcon(new ImageIcon("D:\\\\JavaProject\\\\NotBackground\\\\buttton.jpg"));
 		lblGstbg.setBounds(382, 476, 352, 116);
 		contentPane.add(lblGstbg);
 

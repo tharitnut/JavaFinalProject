@@ -40,7 +40,7 @@ public class ChooseMain extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\Not Background\\rushhour.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\NotBackground\\rushhour.jpg"));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
@@ -51,42 +51,42 @@ public class ChooseMain extends JFrame {
 		contentPane.add(lblTitle);
 		
 		JLabel lbl1bg = new JLabel("");
-		lbl1bg.setIcon(new ImageIcon("D:\\JavaProject\\Not Background\\pork.jpg"));
+		lbl1bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\pork.jpg"));
 		lbl1bg.setBounds(80, 129, 184, 176);
 		contentPane.add(lbl1bg);
 		
 		JLabel lbl2bg = new JLabel("");
-		lbl2bg.setIcon(new ImageIcon("D:\\JavaProject\\Not Background\\crispyP.jpg"));
+		lbl2bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\crispyP.jpg"));
 		lbl2bg.setBounds(325, 129, 184, 183);
 		contentPane.add(lbl2bg);
 
 		JLabel lbl3bg = new JLabel("");
-		lbl3bg.setIcon(new ImageIcon("D:\\JavaProject\\Not Background\\beef.jpg"));
+		lbl3bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\beef.jpg"));
 		lbl3bg.setBounds(565, 129, 184, 176);
 		contentPane.add(lbl3bg);
 		
 		JLabel lbl4bg = new JLabel("");
-		lbl4bg.setIcon(new ImageIcon("D:\\JavaProject\\Not Background\\chicken.jpg"));
+		lbl4bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\chicken.jpg"));
 		lbl4bg.setBounds(813, 129, 184, 176);
 		contentPane.add(lbl4bg);
 		
 		JLabel lbl5bg = new JLabel("");
-		lbl5bg.setIcon(new ImageIcon("D:\\JavaProject\\Not Background\\shrimp.jpg"));
+		lbl5bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\shrimp.jpg"));
 		lbl5bg.setBounds(92, 401, 184, 176);
 		contentPane.add(lbl5bg);
 		
 		JLabel lbl6bg = new JLabel("");
-		lbl6bg.setIcon(new ImageIcon("D:\\JavaProject\\Not Background\\squid.jpg"));
+		lbl6bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\squid.jpg"));
 		lbl6bg.setBounds(333, 401, 176, 172);
 		contentPane.add(lbl6bg);
 		
 		JLabel lbl7bg = new JLabel("");
-		lbl7bg.setIcon(new ImageIcon("D:\\JavaProject\\Not Background\\fish.jpg"));
+		lbl7bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\fish.jpg"));
 		lbl7bg.setBounds(565, 386, 184, 194);
 		contentPane.add(lbl7bg);
 		
 		JLabel lbl8bg = new JLabel("");
-		lbl8bg.setIcon(new ImageIcon("D:\\JavaProject\\Not Background\\seafood.jpg"));
+		lbl8bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\seafood.jpg"));
 		lbl8bg.setBounds(814, 392, 194, 188);
 		contentPane.add(lbl8bg);
 		

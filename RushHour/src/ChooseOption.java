@@ -52,7 +52,7 @@ public class ChooseOption extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\Not Background\\rushhour.jpg"));setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\rushh.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\NotBackground\\rushhour.jpg"));setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\rushh.jpg"));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
