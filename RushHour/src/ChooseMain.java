@@ -1,6 +1,9 @@
 import java.awt.EventQueue;
 import java.awt.Toolkit;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -9,6 +12,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JButton;
+import javax.swing.JRadioButton;
+import javax.swing.UIManager;
 
 public class ChooseMain extends JFrame {
 
@@ -52,145 +57,211 @@ public class ChooseMain extends JFrame {
 		
 		JLabel lbl1bg = new JLabel("");
 		lbl1bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\pork.jpg"));
-		lbl1bg.setBounds(80, 129, 184, 176);
+		lbl1bg.setBounds(114, 123, 122, 114);
 		contentPane.add(lbl1bg);
 		
 		JLabel lbl2bg = new JLabel("");
 		lbl2bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\crispyP.jpg"));
-		lbl2bg.setBounds(325, 129, 184, 183);
+		lbl2bg.setBounds(360, 123, 122, 114);
 		contentPane.add(lbl2bg);
 
 		JLabel lbl3bg = new JLabel("");
 		lbl3bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\beef.jpg"));
-		lbl3bg.setBounds(565, 129, 184, 176);
+		lbl3bg.setBounds(592, 123, 122, 114);
 		contentPane.add(lbl3bg);
 		
 		JLabel lbl4bg = new JLabel("");
 		lbl4bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\chicken.jpg"));
-		lbl4bg.setBounds(813, 129, 184, 176);
+		lbl4bg.setBounds(835, 123, 122, 114);
 		contentPane.add(lbl4bg);
 		
 		JLabel lbl5bg = new JLabel("");
 		lbl5bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\shrimp.jpg"));
-		lbl5bg.setBounds(92, 401, 184, 176);
+		lbl5bg.setBounds(114, 386, 122, 114);
 		contentPane.add(lbl5bg);
 		
 		JLabel lbl6bg = new JLabel("");
 		lbl6bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\squid.jpg"));
-		lbl6bg.setBounds(333, 401, 176, 172);
+		lbl6bg.setBounds(360, 386, 122, 114);
 		contentPane.add(lbl6bg);
 		
 		JLabel lbl7bg = new JLabel("");
 		lbl7bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\fish.jpg"));
-		lbl7bg.setBounds(565, 386, 184, 194);
+		lbl7bg.setBounds(592, 386, 122, 114);
 		contentPane.add(lbl7bg);
 		
 		JLabel lbl8bg = new JLabel("");
 		lbl8bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\seafood.jpg"));
-		lbl8bg.setBounds(814, 392, 194, 188);
+		lbl8bg.setBounds(835, 386, 122, 114);
 		contentPane.add(lbl8bg);
 		
-		JLabel lblChoice1 = new JLabel("หมู");
-		lblChoice1.setForeground(new Color(255, 248, 229));
-		lblChoice1.setFont(new Font("TH K2D July8", Font.BOLD, 42));
-		lblChoice1.setBounds(154, 308, 53, 54);
-		contentPane.add(lblChoice1);
-
-		JLabel lblChoice2 = new JLabel("หมูกรอบ");
-		lblChoice2.setForeground(new Color(255, 248, 229));
-		lblChoice2.setFont(new Font("TH K2D July8", Font.BOLD, 42));
-		lblChoice2.setBounds(360, 308, 132, 54);
-		contentPane.add(lblChoice2);
+		JRadioButton rdbtnPork = new JRadioButton("Pork");
+		rdbtnPork.setContentAreaFilled(false);
+		rdbtnPork.setBorder(null);
+		rdbtnPork.setForeground(new Color(243, 190, 98));
+		rdbtnPork.setIconTextGap(10);
+		rdbtnPork.setFont(new Font("Dialog", Font.BOLD, 24));
+		rdbtnPork.setBounds(137, 262, 99, 61);
+		contentPane.add(rdbtnPork);
 		
-		JLabel lblChoice3 = new JLabel("เนื้อ");
-		lblChoice3.setForeground(new Color(255, 248, 229));
-		lblChoice3.setFont(new Font("TH K2D July8", Font.BOLD, 42));
-		lblChoice3.setBounds(631, 308, 53, 54);
-		contentPane.add(lblChoice3);
+		JRadioButton rdbtnCrispyPork = new JRadioButton("CrispyPork");
+		rdbtnCrispyPork.setContentAreaFilled(false);
+		rdbtnCrispyPork.setBorder(null);
+		rdbtnCrispyPork.setForeground(new Color(243, 190, 98));
+		rdbtnCrispyPork.setIconTextGap(10);
+		rdbtnCrispyPork.setFont(new Font("Dialog", Font.BOLD, 16));
+		rdbtnCrispyPork.setBounds(359, 282, 114, 21);
+		contentPane.add(rdbtnCrispyPork);
 		
-		JLabel lblChoice4 = new JLabel("ไก่");
-		lblChoice4.setForeground(new Color(255, 248, 229));
-		lblChoice4.setFont(new Font("TH K2D July8", Font.BOLD, 42));
-		lblChoice4.setBounds(885, 308, 46, 54);
-		contentPane.add(lblChoice4);
+		JRadioButton rdbtnBeef = new JRadioButton("Beef");
+		rdbtnBeef.setContentAreaFilled(false);
+		rdbtnBeef.setBorder(null);
+		rdbtnBeef.setForeground(new Color(243, 190, 98));
+		rdbtnBeef.setIconTextGap(10);
+		rdbtnBeef.setFont(new Font("Dialog", Font.BOLD, 24));
+		rdbtnBeef.setBounds(617, 282, 89, 21);
+		contentPane.add(rdbtnBeef);
 		
-		JLabel lblChoice5 = new JLabel("กุ้ง");
-		lblChoice5.setForeground(new Color(255, 248, 229));
-		lblChoice5.setFont(new Font("TH K2D July8", Font.BOLD, 42));
-		lblChoice5.setBounds(165, 576, 53, 54);
-		contentPane.add(lblChoice5);
+		JRadioButton rdbtnChicken = new JRadioButton("Chicken");
+		rdbtnChicken.setContentAreaFilled(false);
+		rdbtnChicken.setBorder(null);
+		rdbtnChicken.setForeground(new Color(243, 190, 98));
+		rdbtnChicken.setIconTextGap(10);
+		rdbtnChicken.setFont(new Font("Dialog", Font.BOLD, 20));
+		rdbtnChicken.setBounds(850, 283, 103, 21);
+		contentPane.add(rdbtnChicken);
 		
-		JLabel lblChoice6 = new JLabel("ปลาหมึก");
-		lblChoice6.setForeground(new Color(255, 248, 229));
-		lblChoice6.setFont(new Font("TH K2D July8", Font.BOLD, 42));
-		lblChoice6.setBounds(365, 576, 122, 54);
-		contentPane.add(lblChoice6);
+		JRadioButton rdbtnShrimp = new JRadioButton("Shrimp");
+		rdbtnShrimp.setContentAreaFilled(false);
+		rdbtnShrimp.setBorder(null);
+		rdbtnShrimp.setForeground(new Color(243, 190, 98));
+		rdbtnShrimp.setIconTextGap(10);
+		rdbtnShrimp.setFont(new Font("Dialog", Font.BOLD, 20));
+		rdbtnShrimp.setBounds(128, 559, 103, 21);
+		contentPane.add(rdbtnShrimp);
 		
-		JLabel lblChoice7 = new JLabel("ปลา");
-		lblChoice7.setForeground(new Color(255, 248, 229));
-		lblChoice7.setFont(new Font("TH K2D July8", Font.BOLD, 42));
-		lblChoice7.setBounds(631, 576, 69, 54);
-		contentPane.add(lblChoice7);
+		JRadioButton rdbtnSquid = new JRadioButton("Squid");
+		rdbtnSquid.setContentAreaFilled(false);
+		rdbtnSquid.setBorder(null);
+		rdbtnSquid.setForeground(new Color(243, 190, 98));
+		rdbtnSquid.setIconTextGap(10);
+		rdbtnSquid.setFont(new Font("Dialog", Font.BOLD, 20));
+		rdbtnSquid.setBounds(376, 559, 89, 21);
+		contentPane.add(rdbtnSquid);
 		
-		JLabel lblChoice8 = new JLabel("ทะเลรวม");
-		lblChoice8.setForeground(new Color(255, 248, 229));
-		lblChoice8.setFont(new Font("TH K2D July8", Font.BOLD, 42));
-		lblChoice8.setBounds(850, 576, 132, 54);
-		contentPane.add(lblChoice8);
-
+		JRadioButton rdbtnFish = new JRadioButton("Fish");
+		rdbtnFish.setContentAreaFilled(false);
+		rdbtnFish.setBorder(null);
+		rdbtnFish.setForeground(new Color(243, 190, 98));
+		rdbtnFish.setIconTextGap(10);
+		rdbtnFish.setFont(new Font("Dialog", Font.BOLD, 24));
+		rdbtnFish.setBounds(617, 559, 89, 21);
+		contentPane.add(rdbtnFish);
+		
+		JRadioButton rdbtnSeafood = new JRadioButton("Seafood");
+		rdbtnSeafood.setContentAreaFilled(false);
+		rdbtnSeafood.setBorder(null);
+		rdbtnSeafood.setForeground(new Color(243, 190, 98));
+		rdbtnSeafood.setIconTextGap(10);
+		rdbtnSeafood.setFont(new Font("Dialog", Font.BOLD, 20));
+		rdbtnSeafood.setBounds(850, 559, 103, 21);
+		contentPane.add(rdbtnSeafood);
+		
+		ButtonGroup groupMeat = new ButtonGroup();
+		groupMeat.add(rdbtnPork);
+		groupMeat.add(rdbtnCrispyPork);
+		groupMeat.add(rdbtnBeef);
+		groupMeat.add(rdbtnChicken);
+		groupMeat.add(rdbtnShrimp);
+		groupMeat.add(rdbtnSquid);
+		groupMeat.add(rdbtnFish);
+		groupMeat.add(rdbtnSeafood);
+		
 		JLabel lblPrice1 = new JLabel("45฿");
-		lblPrice1.setFont(new Font("TH Mali Grade 6", Font.BOLD, 45));
+		lblPrice1.setFont(new Font("Dialog", Font.BOLD, 40));
 		lblPrice1.setForeground(new Color(243, 190, 98));
-		lblPrice1.setBounds(154, 337, 80, 54);
+		lblPrice1.setBounds(145, 235, 72, 54);
 		contentPane.add(lblPrice1);
 		
 		JLabel lblPrice2 = new JLabel("50฿");
 		lblPrice2.setForeground(new Color(243, 190, 98));
 		lblPrice2.setFont(new Font("TH Mali Grade 6", Font.BOLD, 45));
-		lblPrice2.setBounds(393, 337, 80, 54);
+		lblPrice2.setBounds(382, 235, 80, 54);
 		contentPane.add(lblPrice2);
 		
 		JLabel lblPrice3 = new JLabel("50฿");
 		lblPrice3.setForeground(new Color(243, 190, 98));
 		lblPrice3.setFont(new Font("TH Mali Grade 6", Font.BOLD, 45));
-		lblPrice3.setBounds(633, 337, 74, 54);
+		lblPrice3.setBounds(625, 235, 74, 54);
 		contentPane.add(lblPrice3);
 		
 		JLabel lblPrice4 = new JLabel("45฿");
 		lblPrice4.setForeground(new Color(243, 190, 98));
 		lblPrice4.setFont(new Font("TH Mali Grade 6", Font.BOLD, 45));
-		lblPrice4.setBounds(882, 337, 75, 54);
+		lblPrice4.setBounds(865, 235, 75, 54);
 		contentPane.add(lblPrice4);
 		
 		JLabel lblPrice5 = new JLabel("50฿");
 		lblPrice5.setForeground(new Color(243, 190, 98));
 		lblPrice5.setFont(new Font("TH Mali Grade 6", Font.BOLD, 45));
-		lblPrice5.setBounds(154, 607, 80, 54);
+		lblPrice5.setBounds(138, 510, 80, 54);
 		contentPane.add(lblPrice5);
 		
 		JLabel lblPrice6 = new JLabel("50฿");
 		lblPrice6.setForeground(new Color(243, 190, 98));
 		lblPrice6.setFont(new Font("TH Mali Grade 6", Font.BOLD, 45));
-		lblPrice6.setBounds(400, 607, 80, 54);
+		lblPrice6.setBounds(382, 510, 80, 54);
 		contentPane.add(lblPrice6);
 		
 		JLabel lblPrice7 = new JLabel("45฿");
 		lblPrice7.setForeground(new Color(243, 190, 98));
 		lblPrice7.setFont(new Font("TH Mali Grade 6", Font.BOLD, 45));
-		lblPrice7.setBounds(640, 607, 74, 54);
+		lblPrice7.setBounds(626, 510, 74, 54);
 		contentPane.add(lblPrice7);
 		
 		JLabel lblPrice8 = new JLabel("50฿");
 		lblPrice8.setForeground(new Color(243, 190, 98));
 		lblPrice8.setFont(new Font("TH Mali Grade 6", Font.BOLD, 45));
-		lblPrice8.setBounds(885, 607, 72, 54);
+		lblPrice8.setBounds(865, 510, 72, 54);
 		contentPane.add(lblPrice8);
+		
+		JButton btnNext = new JButton("NEXT");
+		btnNext.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ChooseOption cp = new ChooseOption();
+				cp.setVisible(true);
+				cp.setLocationRelativeTo(null);
+				cp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				dispose();
+
+			}
+		});
+		btnNext.setForeground(Color.BLACK);
+		btnNext.setFont(new Font("Gloucester MT Extra Condensed", Font.BOLD, 30));
+		btnNext.setBorder(UIManager.getBorder("Menu.border"));
+		btnNext.setBackground(new Color(255, 248, 229));
+		btnNext.setBounds(899, 601, 122, 54);
+		contentPane.add(btnNext);
 		
 		JLabel bg = new JLabel("");
 		bg.setBounds(-7, -8, 1100, 700);
 		bg.setIcon(new ImageIcon("D:\\JavaProject\\Background\\meatSelect.jpg"));
 		contentPane.add(bg);
-
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				
+		
+		
 		
 	}
 }

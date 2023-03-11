@@ -2,6 +2,8 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -14,12 +16,14 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextPane;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
 
 public class RegisterPage extends JFrame {
 
 	private JPanel contentPane;
 	private JPasswordField passwordField;
 	private JPasswordField passwordConfirm;
+	private JTextField textFieldUser;
 
 	/**
 	 * Launch the application.
@@ -63,12 +67,14 @@ public class RegisterPage extends JFrame {
 		lblEnterUser.setBounds(476, 113, 408, 48);
 		contentPane.add(lblEnterUser);
 		
-		JTextPane txtPassword = new JTextPane();
-		txtPassword.setBackground(new Color(241, 186, 92));
-		txtPassword.setCaretColor(Color.RED);
-		txtPassword.setFont(new Font("Comic Sans MS", Font.PLAIN, 30));
-		txtPassword.setBounds(486, 171, 459, 48);
-		contentPane.add(txtPassword);
+		textFieldUser = new JTextField();
+		textFieldUser.setBackground(new Color(241, 186, 92));
+		textFieldUser.setBorder(null);
+		textFieldUser.setCaretColor(Color.RED);
+		textFieldUser.setFont(new Font("Comic Sans MS", Font.PLAIN, 30));
+		textFieldUser.setBounds(486, 171, 459, 48);
+		contentPane.add(textFieldUser);
+		textFieldUser.setColumns(10);
 		
 		JLabel lblEnterPass = new JLabel("Please enter Password");
 		lblEnterPass.setForeground(new Color(173, 63, 63));
@@ -99,10 +105,71 @@ public class RegisterPage extends JFrame {
 		contentPane.add(passwordConfirm);
 		
 		JButton btnSent = new JButton("CONFIRM");
+		btnSent.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				LoginPage lgp = new LoginPage();
+				lgp.setVisible(true);
+				lgp.setLocationRelativeTo(null);
+				lgp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				dispose();
+			}
+		});
 		btnSent.setBackground(new Color(255, 248, 229));
 		btnSent.setForeground(Color.black);
 		btnSent.setBorder(UIManager.getBorder("Menu.border"));
 		btnSent.setFont(new Font("Gloucester MT Extra Condensed", Font.BOLD, 28));
+		btnSent.addActionListener (new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				boolean chkUser = false;
+				boolean chkPass = false;
+				boolean passCon = false;
+				String pass = String.copyValueOf(passwordField.getPassword());
+				while(chkUser||chkPass||passCon) {
+					String user = textFieldUser.getText().trim();
+					while(user.length()<6||user.length()>12) {
+						textFieldUser = new JTextField();
+					}
+					user = user.toLowerCase();
+					chkUser = true;
+					for(int i =0;i<user.length();i++) {
+						if((user.charAt(i)<'a'||user.charAt(i)>'z')||(user.charAt(i)<'0'||user.charAt(i)>'9')) {
+							chkUser=false;
+						}
+					}
+					pass = pass.trim();
+					int upperCount = 0, lowerCount = 0, numCount = 0;
+					while(pass.length()<8||upperCount<1||lowerCount<1||numCount<1) {
+						
+					}
+					chkPass = true;
+					for(int i = 0 ;i<pass.length();i++) {
+						upperCount = 0;
+						lowerCount = 0;
+						numCount = 0;
+						if (user.charAt(i) >= 'A' && user.charAt(i) <= 'Z') upperCount++;
+						if (user.charAt(i) >= 'a' && user.charAt(i) <= 'z') lowerCount++;
+						if (user.charAt(i) >= '0' && user.charAt(i) <= '9') numCount++;
+						if(upperCount<1||lowerCount<1||numCount<1) {
+							chkPass=false;
+						}
+					}
+					String passConfirm = String.copyValueOf(passwordConfirm.getPassword());
+					if(pass.equals(passConfirm)) {
+						passCon=true;
+					}
+				}
+				Customer cs= new Customer();
+				cs.setUser(textFieldUser.getText().trim());
+				cs.setPass(pass);
+				cs.register();
+				FirstPage main = new FirstPage();
+				main.setVisible(true);
+				main.setLocationRelativeTo(null);
+				main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				dispose();
+			}
+		});
 		btnSent.setBounds(736, 540, 120, 48);
 		contentPane.add(btnSent);
 		
@@ -149,5 +216,34 @@ public class RegisterPage extends JFrame {
 		bg.setBounds(0, -26, 1100, 700);
 		bg.setIcon(new ImageIcon("D:\\JavaProject\\Background\\regis.jpg"));
 		contentPane.add(bg);
+		
+		
 	}
+	
+	public boolean userChk() {
+		boolean chk = true;
+		String user = textFieldUser.getText();
+		while(user.length()<6||user.length()>12) {
+			textFieldUser = new JTextField();
+		}
+		user = user.toLowerCase();
+		for(int i =0;i<user.length();i++) {
+			if((user.charAt(i)<='a'||user.charAt(i)>='z')||(user.charAt(i)<='0'||user.charAt(i)>='9')) {
+				chk=false;
+			}
+		}
+		return chk;
+	}
+	
+	public boolean passConfirm(java.awt.event.ActionEvent evt) {
+		boolean chk = false;
+		String pass = passwordField.getPassword().toString().trim();
+		String passConfirm = passwordConfirm.getPassword().toString().trim();
+		if(pass.equals(passConfirm)) {
+			chk=true;
+		}
+		return chk;
+	}
+	
+	
 }

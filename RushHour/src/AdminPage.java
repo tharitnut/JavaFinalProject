@@ -51,7 +51,7 @@ public class AdminPage extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\Not Background\\rushhour.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\NotBackground\\rushhour.jpg"));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 

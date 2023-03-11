@@ -216,7 +216,7 @@ public class ChooseOption extends JFrame {
 		btnNext.setFont(new Font("Gloucester MT Extra Condensed", Font.BOLD, 30));
 		btnNext.setBorder(UIManager.getBorder("Menu.border"));
 		btnNext.setBackground(new Color(255, 248, 229));
-		btnNext.setBounds(841, 608, 122, 54);
+		btnNext.setBounds(842, 608, 122, 54);
 		contentPane.add(btnNext);
 		
 		JLabel bg = new JLabel("");
