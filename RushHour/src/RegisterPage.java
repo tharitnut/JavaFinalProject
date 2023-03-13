@@ -64,8 +64,16 @@ public class RegisterPage extends JFrame {
 		JLabel lblEnterUser = new JLabel("Please enter Username");
 		lblEnterUser.setForeground(new Color(173, 63, 63));
 		lblEnterUser.setFont(new Font("Monospaced", Font.BOLD, 25));
-		lblEnterUser.setBounds(476, 110, 408, 29);
+		lblEnterUser.setBounds(476, 110, 319, 29);
 		contentPane.add(lblEnterUser);
+		
+		final JLabel lblTryUser = new JLabel("Please input the right format");
+		lblTryUser.setForeground(new Color(173, 63, 63));
+		lblTryUser.setFont(new Font("Monospaced", Font.BOLD, 14));
+		lblTryUser.setBounds(817, 118, 259, 19);
+		contentPane.add(lblTryUser);
+		lblTryUser.setVisible(false);
+		
 		
 		JLabel lblUserDetail = new JLabel("(6 - 12 Characters or Numbers Only)");
 		lblUserDetail.setForeground(new Color(173, 63, 63));
@@ -88,10 +96,18 @@ public class RegisterPage extends JFrame {
 		lblEnterPass.setBounds(476, 244, 408, 29);
 		contentPane.add(lblEnterPass);
 		
-		JLabel lblPassword = new JLabel("(At Least 7 Character, At Least 1 Uppercase and Lowercase)");
+		final JLabel lblTryPass = new JLabel("Please input the right format");
+		lblTryPass.setForeground(new Color(173, 63, 63));
+		lblTryPass.setFont(new Font("Monospaced", Font.BOLD, 14));
+		lblTryPass.setBounds(817, 253, 259, 19);
+		contentPane.add(lblTryPass);
+		lblTryPass.setVisible(false);
+		
+		
+		JLabel lblPassword = new JLabel("(At Least 7 Character, At Least 1 Uppercase, Lowercase and Number)");
 		lblPassword.setForeground(new Color(173, 63, 63));
-		lblPassword.setFont(new Font("Monospaced", Font.BOLD, 16));
-		lblPassword.setBounds(476, 269, 582, 29);
+		lblPassword.setFont(new Font("Monospaced", Font.BOLD, 15));
+		lblPassword.setBounds(476, 269, 600, 29);
 		contentPane.add(lblPassword);
 		
 		passwordField = new JPasswordField();
@@ -130,25 +146,25 @@ public class RegisterPage extends JFrame {
 		btnSent.addActionListener (new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String user = textFieldUser.getText();
-				String pass = passwordField.getText();
-				String passCon = passwordConfirm.getText();
+				String pass = passwordField.getText().trim();
+				String passCon = passwordConfirm.getText().trim();
 				CheckUser chkUser = new CheckUser();
 				CheckPassword chkPass = new CheckPassword();
-				//System.out.println(pass+" "+passCon);
-				//System.out.println(!chkPass.chkPass(pass)+" "+chkPass.chkCon(passCon));
-					if(!chkUser.chkUser(user)) {
-						textFieldUser.setText("Please input the right format");
-						textFieldUser.setForeground(Color.red);
-					}
-					if(!chkPass.chkPass(pass)) {
-						passwordField.setText("Please input the right format");
-						passwordField.setForeground(Color.red);
-					}
-					if(!chkPass.chkCon(passCon)) {
+					if(!chkUser.chkUser(user)||textFieldUser.getText().equals("")) {
+						lblTryUser.setVisible(true);
+						textFieldUser.setText("");
+					}	
+					if(!chkPass.chkPass(pass)||passwordField.getText().equals("")) {
+						lblTryPass.setVisible(true);
+						passwordField.setText("");
 						passwordConfirm.setText("");
 					}
-					
+					if(!chkPass.chkPass(pass)||!chkPass.chkCon(passCon)) {
+						passwordConfirm.setText("");
+					}
 				if(chkUser.chkUser(user)&&chkPass.chkPass(pass)&&chkPass.chkCon(passCon)) {
+					lblTryUser.setVisible(false);
+					lblTryPass.setVisible(false);
 					Customer cs= new Customer();
 					cs.setUser(textFieldUser.getText().trim());
 					cs.setPass(pass);
@@ -206,6 +222,8 @@ public class RegisterPage extends JFrame {
 		bg.setBounds(0, -26, 1100, 700);
 		bg.setIcon(new ImageIcon("D:\\JavaProject\\Background\\regis.jpg"));
 		contentPane.add(bg);
+		
+		
 		
 	}
 	

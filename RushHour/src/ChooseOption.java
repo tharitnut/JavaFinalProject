@@ -233,6 +233,7 @@ public class ChooseOption extends JFrame {
 				if(rdbtnegg3.isSelected()) {
 					menu.plusTopping(3);
 				}
+				menu.setAddtion(textField.getText());
 				
 				OrderPage op = new OrderPage();
 				op.setVisible(true);

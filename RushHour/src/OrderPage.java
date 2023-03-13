@@ -78,13 +78,13 @@ public class OrderPage extends JFrame {
 		
 		JLabel lblGotMenu = new JLabel(menu.getMenu());
 		lblGotMenu.setForeground(Color.RED);
-		lblGotMenu.setFont(new Font("TH Kodchasal", Font.BOLD, 40));
-		lblGotMenu.setBounds(416, 236, 363, 84);
+		lblGotMenu.setFont(new Font("Sitka Text", Font.BOLD, 26));
+		lblGotMenu.setBounds(416, 236, 566, 84);
 		contentPane.add(lblGotMenu);
 		
 		JLabel lblGotAdd = new JLabel(menu.getAddition());
 		lblGotAdd.setForeground(Color.RED);
-		lblGotAdd.setFont(new Font("TH Kodchasal", Font.BOLD, 40));
+		lblGotAdd.setFont(new Font("Sitka Text", Font.BOLD, 26));
 		lblGotAdd.setBounds(416, 330, 363, 84);
 		contentPane.add(lblGotAdd);
 		
@@ -95,8 +95,8 @@ public class OrderPage extends JFrame {
 		
 		JLabel lblGotAdd_1 = new JLabel(Integer.toString(menu.getPrice()));
 		lblGotAdd_1.setForeground(Color.RED);
-		lblGotAdd_1.setFont(new Font("TH Kodchasal", Font.BOLD, 40));
-		lblGotAdd_1.setBounds(536, 413, 74, 84);
+		lblGotAdd_1.setFont(new Font("Comic Sans MS", Font.BOLD, 26));
+		lblGotAdd_1.setBounds(551, 413, 74, 84);
 		contentPane.add(lblGotAdd_1);
 		
 		JButton btnOrder = new JButton("ORDER");

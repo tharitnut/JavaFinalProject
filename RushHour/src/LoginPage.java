@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.BevelBorder;
+import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import javax.swing.UIManager;
@@ -59,6 +60,19 @@ public class LoginPage extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JLabel lblError = new JLabel("No user found.");
+		lblError.setForeground(Color.RED);
+		lblError.setBackground(Color.ORANGE);
+		lblError.setBounds(489, 297, 322, 77);
+		contentPane.add(lblError);
+		//lblError.setVisible(false);
+		
+		JLabel lblError2 = new JLabel("Please try again or register.");
+		lblError2.setBackground(Color.ORANGE);
+		lblError2.setBounds(565, 341, 45, 13);
+		contentPane.add(lblError2);
+		lblError2.setVisible(false);
+		
 		JLabel lblTitleLogin = new JLabel("LOGIN");
 		lblTitleLogin.setFont(new Font("Cooper Black", Font.BOLD, 99));
 		lblTitleLogin.setForeground(new Color(173, 63, 63));
@@ -91,6 +105,8 @@ public class LoginPage extends JFrame {
 		passwordField.setFont(new Font("Comic Sans MS", Font.PLAIN, 30));
 		passwordField.setBounds(479, 399, 498, 60);
 		contentPane.add(passwordField);
+		
+		
 		
 		JButton btnLogin = new JButton("LOGIN");
 		btnLogin.setBackground(new Color(255, 248, 229));
@@ -166,5 +182,7 @@ public class LoginPage extends JFrame {
 		bg.setBounds(0, -26, 1100, 700);
 		bg.setIcon(new ImageIcon("D:\\JavaProject\\Background\\login.jpg"));
 		contentPane.add(bg);	
+		
+		
 	}
 }

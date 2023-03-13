@@ -192,6 +192,7 @@ public class ChooseMain extends JFrame {
 		btnNext.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				menu.randomMenu();
 				if(rdbtnPork.isSelected()) {
 					menu.selectMeat(1);
 				}
