@@ -60,18 +60,13 @@ public class LoginPage extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblError = new JLabel("No user found.");
-		lblError.setForeground(Color.RED);
-		lblError.setBackground(Color.ORANGE);
-		lblError.setBounds(489, 297, 322, 77);
+		final JLabel lblError = new JLabel("No user found. Please try again or register.");
+		lblError.setForeground(new Color(173, 63, 63));
+		lblError.setBackground(new Color(255, 255, 255));
+		lblError.setFont(new Font("Monospaced", Font.BOLD, 28));
+		lblError.setBounds(335, 145, 751, 60);
 		contentPane.add(lblError);
-		//lblError.setVisible(false);
-		
-		JLabel lblError2 = new JLabel("Please try again or register.");
-		lblError2.setBackground(Color.ORANGE);
-		lblError2.setBounds(565, 341, 45, 13);
-		contentPane.add(lblError2);
-		lblError2.setVisible(false);
+		lblError.setVisible(false);
 		
 		JLabel lblTitleLogin = new JLabel("LOGIN");
 		lblTitleLogin.setFont(new Font("Cooper Black", Font.BOLD, 99));
@@ -85,14 +80,14 @@ public class LoginPage extends JFrame {
 		lblEnterUser.setBounds(479, 196, 408, 48);
 		contentPane.add(lblEnterUser);
 
-		JTextPane txtPassword = new JTextPane();
-		txtPassword.setBackground(new Color(241, 186, 92));
-		txtPassword.setCaretColor(Color.RED);
-		txtPassword.setFont(new Font("Comic Sans MS", Font.PLAIN, 30));
-		txtPassword.setBounds(479, 254, 498, 60);
-		contentPane.add(txtPassword);
+		final JTextField txtField = new JTextField();
+		txtField.setBackground(new Color(241, 186, 92));
+		txtField.setCaretColor(Color.RED);
+		txtField.setFont(new Font("Comic Sans MS", Font.PLAIN, 30));
+		txtField.setBounds(479, 254, 498, 60);
+		contentPane.add(txtField);
 		
-		JLabel lblEnterPass = new JLabel("Please enter Password");
+		final JLabel lblEnterPass = new JLabel("Please enter Password");
 		lblEnterPass.setForeground(new Color(173, 63, 63));
 		lblEnterPass.setFont(new Font("Monospaced", Font.BOLD, 25));
 		lblEnterPass.setBounds(479, 341, 408, 48);
@@ -117,25 +112,26 @@ public class LoginPage extends JFrame {
 		contentPane.add(btnLogin);
 		btnLogin.addActionListener (new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Customer cs = new Customer();
 				try {
-					Customer cs = new Customer();
-					boolean regis = cs.isRegister();
-					while(regis=false) {
-						JOptionPane.showMessageDialog(null, "No user found. Please try again or register.");
-						
+					if(!cs.isRegister(txtField.getText(),passwordField.getText())) {
+						System.out.println("kuy");
+						lblError.setVisible(true);
+						txtField.setText("");
+						passwordField.setText("");
+					}
+					else {
+						ChooseMain cm = new ChooseMain();
+						cm.setVisible(true);
+						cm.setLocationRelativeTo(null);
+						cm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+						dispose();
 					}
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				Customer cs = new Customer();
 				cs.setRegis(true);
-				ChooseMain cm = new ChooseMain();
-				cm.setVisible(true);
-				cm.setLocationRelativeTo(null);
-				cm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				dispose();
-				
 			}
 		});
 		

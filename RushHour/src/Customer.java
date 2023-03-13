@@ -36,19 +36,19 @@ public class Customer {
 		return regis;
 	}
 	
-	public boolean isRegister() throws IOException {
+	public boolean isRegister(String user, String pass) throws IOException {
 		Scanner scan = new Scanner(new FileReader("CustomerDetail.txt"));
-		boolean check = false;
 		while (scan.hasNext()) {
-			String user = scan.next();
-			String pass = scan.next();
-			if (user == getUser() && pass == getPass()) {
-				check = true;
-				break;
+			setUser(scan.next());
+			setPass(scan.next());
+			System.out.println(getUser()+"\t"+getPass());
+			if (user.equals(getUser()) && pass.equals(getPass())) {
+				System.out.println(user+"\t"+pass);
+				return true;
 			}
 		}
 		scan.close();
-		return check;
+		return false;
 	}
 	
 	public void register() {
