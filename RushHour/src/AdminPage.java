@@ -6,6 +6,11 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -66,20 +71,25 @@ public class AdminPage extends JFrame {
 		getContentPane().add(scrollPane);
 		JTable table = new JTable();
 		table.setFont(new Font("TH Chakra Petch", Font.BOLD, 30));
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-			},
-			new String[] {
-				"ORDER", "Unit", "Price"
-			}
-		));
+		
+		DefaultTableModel model = new DefaultTableModel();
+		model.addColumn("ORDER");
+
+		try {
+		    BufferedReader reader = new BufferedReader(new FileReader("Menu.txt"));
+		    String line;
+		    reader.readLine();
+		    while ((line = reader.readLine()) != null) {
+		        model.addRow(new Object[] { line });
+		    }
+		    reader.close();
+		} catch (FileNotFoundException e1) {
+		    e1.printStackTrace();
+		} catch (IOException e2) {
+		    e2.printStackTrace();
+		}
+		
+		table.setModel(model);
 		table.getColumnModel().getColumn(0).setPreferredWidth(146);
 		scrollPane.setViewportView(table);
 		table.getTableHeader().setFont(new Font("Monospaced", Font.BOLD, 35));

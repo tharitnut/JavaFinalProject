@@ -4,10 +4,12 @@ import java.util.*;
 public class Customer {
 	private String user;
 	private String pass;
+	private boolean regis;
 	
 	public Customer() {
 		user = "";
 		pass = "";
+		regis = false;
 	}
 	
 	public void setUser(String user){
@@ -24,6 +26,14 @@ public class Customer {
 	
 	public String getPass() {
 		return pass;
+	}
+	
+	public void setRegis(boolean regis) {
+		this.regis=regis;
+	}
+	
+	public boolean getRegis() {
+		return regis;
 	}
 	
 	public boolean isRegister() throws IOException {
@@ -47,7 +57,8 @@ public class Customer {
 			PrintWriter write = new PrintWriter(bw);
 			write.println(getUser()+"\t"+getPass());
 			bw.close();
-		} catch (IOException e) {
+		}
+		catch (IOException e) {
 			e.getMessage();
 		}
 	}

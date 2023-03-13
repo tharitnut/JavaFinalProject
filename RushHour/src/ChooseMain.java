@@ -1,5 +1,6 @@
 import java.awt.EventQueue;
 import java.awt.Toolkit;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -52,50 +53,10 @@ public class ChooseMain extends JFrame {
 		JLabel lblTitle = new JLabel("PICK UP YOUR MEAT!!");
 		lblTitle.setForeground(new Color(182, 35, 15));
 		lblTitle.setFont(new Font("Cooper Black", Font.PLAIN, 70));
-		lblTitle.setBounds(128, 49, 829, 54);
+		lblTitle.setBounds(128, 38, 829, 54);
 		contentPane.add(lblTitle);
 		
-		JLabel lbl1bg = new JLabel("");
-		lbl1bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\pork.jpg"));
-		lbl1bg.setBounds(114, 123, 122, 114);
-		contentPane.add(lbl1bg);
-		
-		JLabel lbl2bg = new JLabel("");
-		lbl2bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\crispyP.jpg"));
-		lbl2bg.setBounds(360, 123, 122, 114);
-		contentPane.add(lbl2bg);
-
-		JLabel lbl3bg = new JLabel("");
-		lbl3bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\beef.jpg"));
-		lbl3bg.setBounds(592, 123, 122, 114);
-		contentPane.add(lbl3bg);
-		
-		JLabel lbl4bg = new JLabel("");
-		lbl4bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\chicken.jpg"));
-		lbl4bg.setBounds(835, 123, 122, 114);
-		contentPane.add(lbl4bg);
-		
-		JLabel lbl5bg = new JLabel("");
-		lbl5bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\shrimp.jpg"));
-		lbl5bg.setBounds(114, 386, 122, 114);
-		contentPane.add(lbl5bg);
-		
-		JLabel lbl6bg = new JLabel("");
-		lbl6bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\squid.jpg"));
-		lbl6bg.setBounds(360, 386, 122, 114);
-		contentPane.add(lbl6bg);
-		
-		JLabel lbl7bg = new JLabel("");
-		lbl7bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\fish.jpg"));
-		lbl7bg.setBounds(592, 386, 122, 114);
-		contentPane.add(lbl7bg);
-		
-		JLabel lbl8bg = new JLabel("");
-		lbl8bg.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\seafood.jpg"));
-		lbl8bg.setBounds(835, 386, 122, 114);
-		contentPane.add(lbl8bg);
-		
-		JRadioButton rdbtnPork = new JRadioButton("Pork");
+		final JRadioButton rdbtnPork = new JRadioButton("Pork");
 		rdbtnPork.setContentAreaFilled(false);
 		rdbtnPork.setBorder(null);
 		rdbtnPork.setForeground(new Color(243, 190, 98));
@@ -104,7 +65,8 @@ public class ChooseMain extends JFrame {
 		rdbtnPork.setBounds(137, 262, 99, 61);
 		contentPane.add(rdbtnPork);
 		
-		JRadioButton rdbtnCrispyPork = new JRadioButton("CrispyPork");
+		
+		final JRadioButton rdbtnCrispyPork = new JRadioButton("CrispyPork");
 		rdbtnCrispyPork.setContentAreaFilled(false);
 		rdbtnCrispyPork.setBorder(null);
 		rdbtnCrispyPork.setForeground(new Color(243, 190, 98));
@@ -113,7 +75,7 @@ public class ChooseMain extends JFrame {
 		rdbtnCrispyPork.setBounds(359, 282, 114, 21);
 		contentPane.add(rdbtnCrispyPork);
 		
-		JRadioButton rdbtnBeef = new JRadioButton("Beef");
+		final JRadioButton rdbtnBeef = new JRadioButton("Beef");
 		rdbtnBeef.setContentAreaFilled(false);
 		rdbtnBeef.setBorder(null);
 		rdbtnBeef.setForeground(new Color(243, 190, 98));
@@ -122,7 +84,7 @@ public class ChooseMain extends JFrame {
 		rdbtnBeef.setBounds(617, 282, 89, 21);
 		contentPane.add(rdbtnBeef);
 		
-		JRadioButton rdbtnChicken = new JRadioButton("Chicken");
+		final JRadioButton rdbtnChicken = new JRadioButton("Chicken");
 		rdbtnChicken.setContentAreaFilled(false);
 		rdbtnChicken.setBorder(null);
 		rdbtnChicken.setForeground(new Color(243, 190, 98));
@@ -131,7 +93,7 @@ public class ChooseMain extends JFrame {
 		rdbtnChicken.setBounds(850, 283, 103, 21);
 		contentPane.add(rdbtnChicken);
 		
-		JRadioButton rdbtnShrimp = new JRadioButton("Shrimp");
+		final JRadioButton rdbtnShrimp = new JRadioButton("Shrimp");
 		rdbtnShrimp.setContentAreaFilled(false);
 		rdbtnShrimp.setBorder(null);
 		rdbtnShrimp.setForeground(new Color(243, 190, 98));
@@ -140,7 +102,7 @@ public class ChooseMain extends JFrame {
 		rdbtnShrimp.setBounds(128, 559, 103, 21);
 		contentPane.add(rdbtnShrimp);
 		
-		JRadioButton rdbtnSquid = new JRadioButton("Squid");
+		final JRadioButton rdbtnSquid = new JRadioButton("Squid");
 		rdbtnSquid.setContentAreaFilled(false);
 		rdbtnSquid.setBorder(null);
 		rdbtnSquid.setForeground(new Color(243, 190, 98));
@@ -149,7 +111,7 @@ public class ChooseMain extends JFrame {
 		rdbtnSquid.setBounds(376, 559, 89, 21);
 		contentPane.add(rdbtnSquid);
 		
-		JRadioButton rdbtnFish = new JRadioButton("Fish");
+		final JRadioButton rdbtnFish = new JRadioButton("Fish");
 		rdbtnFish.setContentAreaFilled(false);
 		rdbtnFish.setBorder(null);
 		rdbtnFish.setForeground(new Color(243, 190, 98));
@@ -158,7 +120,7 @@ public class ChooseMain extends JFrame {
 		rdbtnFish.setBounds(617, 559, 89, 21);
 		contentPane.add(rdbtnFish);
 		
-		JRadioButton rdbtnSeafood = new JRadioButton("Seafood");
+		final JRadioButton rdbtnSeafood = new JRadioButton("Seafood");
 		rdbtnSeafood.setContentAreaFilled(false);
 		rdbtnSeafood.setBorder(null);
 		rdbtnSeafood.setForeground(new Color(243, 190, 98));
@@ -226,9 +188,34 @@ public class ChooseMain extends JFrame {
 		contentPane.add(lblPrice8);
 		
 		JButton btnNext = new JButton("NEXT");
+		final Menu menu = new Menu();
 		btnNext.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				if(rdbtnPork.isSelected()) {
+					menu.selectMeat(1);
+				}
+				else if(rdbtnCrispyPork.isSelected()) {
+					menu.selectMeat(2);
+				}
+				else if(rdbtnBeef.isSelected()) {
+					menu.selectMeat(3);
+				}
+				else if(rdbtnChicken.isSelected()) {
+					menu.selectMeat(4);
+				}
+				else if(rdbtnShrimp.isSelected()) {
+					menu.selectMeat(5);
+				}
+				else if(rdbtnSquid.isSelected()) {
+					menu.selectMeat(6);
+				}
+				else if(rdbtnFish.isSelected()) {
+					menu.selectMeat(7);
+					}
+				else if(rdbtnSeafood.isSelected()) {
+					menu.selectMeat(8);
+				}
 				ChooseOption cp = new ChooseOption();
 				cp.setVisible(true);
 				cp.setLocationRelativeTo(null);
@@ -237,6 +224,7 @@ public class ChooseMain extends JFrame {
 
 			}
 		});
+		
 		btnNext.setForeground(Color.BLACK);
 		btnNext.setFont(new Font("Gloucester MT Extra Condensed", Font.BOLD, 30));
 		btnNext.setBorder(UIManager.getBorder("Menu.border"));
@@ -246,7 +234,7 @@ public class ChooseMain extends JFrame {
 		
 		JLabel bg = new JLabel("");
 		bg.setBounds(-7, -8, 1100, 700);
-		bg.setIcon(new ImageIcon("D:\\JavaProject\\Background\\meatSelect.jpg"));
+		bg.setIcon(new ImageIcon("D:\\JavaProject\\Background\\meatSelect.png"));
 		contentPane.add(bg);
 		
 		

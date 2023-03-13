@@ -2,13 +2,18 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.util.Scanner;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -88,22 +93,35 @@ public class LoginPage extends JFrame {
 		contentPane.add(passwordField);
 		
 		JButton btnLogin = new JButton("LOGIN");
-		btnLogin.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				ChooseMain cm = new ChooseMain();
-				cm.setVisible(true);
-				cm.setLocationRelativeTo(null);
-				cm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				dispose();
-			}
-		});
 		btnLogin.setBackground(new Color(255, 248, 229));
 		btnLogin.setForeground(Color.black);
 		btnLogin.setBorder(UIManager.getBorder("Menu.border"));
 		btnLogin.setFont(new Font("Gloucester MT Extra Condensed", Font.BOLD, 30));
 		btnLogin.setBounds(772, 513, 122, 54);
 		contentPane.add(btnLogin);
+		btnLogin.addActionListener (new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Customer cs = new Customer();
+					boolean regis = cs.isRegister();
+					while(regis=false) {
+						JOptionPane.showMessageDialog(null, "No user found. Please try again or register.");
+						
+					}
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				Customer cs = new Customer();
+				cs.setRegis(true);
+				ChooseMain cm = new ChooseMain();
+				cm.setVisible(true);
+				cm.setLocationRelativeTo(null);
+				cm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				dispose();
+				
+			}
+		});
 		
 		JButton btnCancel = new JButton("CANCEL");
 		btnCancel.addMouseListener(new MouseAdapter() {

@@ -64,8 +64,14 @@ public class RegisterPage extends JFrame {
 		JLabel lblEnterUser = new JLabel("Please enter Username");
 		lblEnterUser.setForeground(new Color(173, 63, 63));
 		lblEnterUser.setFont(new Font("Monospaced", Font.BOLD, 25));
-		lblEnterUser.setBounds(476, 113, 408, 48);
+		lblEnterUser.setBounds(476, 110, 408, 29);
 		contentPane.add(lblEnterUser);
+		
+		JLabel lblUserDetail = new JLabel("(6 - 12 Characters or Numbers Only)");
+		lblUserDetail.setForeground(new Color(173, 63, 63));
+		lblUserDetail.setFont(new Font("Monospaced", Font.BOLD, 16));
+		lblUserDetail.setBounds(476, 132, 418, 29);
+		contentPane.add(lblUserDetail);
 		
 		textFieldUser = new JTextField();
 		textFieldUser.setBackground(new Color(241, 186, 92));
@@ -79,8 +85,14 @@ public class RegisterPage extends JFrame {
 		JLabel lblEnterPass = new JLabel("Please enter Password");
 		lblEnterPass.setForeground(new Color(173, 63, 63));
 		lblEnterPass.setFont(new Font("Monospaced", Font.BOLD, 25));
-		lblEnterPass.setBounds(476, 244, 408, 48);
+		lblEnterPass.setBounds(476, 244, 408, 29);
 		contentPane.add(lblEnterPass);
+		
+		JLabel lblPassword = new JLabel("(At Least 7 Character, At Least 1 Uppercase and Lowercase)");
+		lblPassword.setForeground(new Color(173, 63, 63));
+		lblPassword.setFont(new Font("Monospaced", Font.BOLD, 16));
+		lblPassword.setBounds(476, 269, 582, 29);
+		contentPane.add(lblPassword);
 		
 		passwordField = new JPasswordField();
 		passwordField.setBackground(new Color(241, 186, 92));
@@ -104,74 +116,52 @@ public class RegisterPage extends JFrame {
 		passwordConfirm.setBounds(486, 448, 459, 48);
 		contentPane.add(passwordConfirm);
 		
+		
+		
+		
 		JButton btnSent = new JButton("CONFIRM");
-		btnSent.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				LoginPage lgp = new LoginPage();
-				lgp.setVisible(true);
-				lgp.setLocationRelativeTo(null);
-				lgp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				dispose();
-			}
-		});
+		
 		btnSent.setBackground(new Color(255, 248, 229));
 		btnSent.setForeground(Color.black);
 		btnSent.setBorder(UIManager.getBorder("Menu.border"));
 		btnSent.setFont(new Font("Gloucester MT Extra Condensed", Font.BOLD, 28));
-		btnSent.addActionListener (new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				boolean chkUser = false;
-				boolean chkPass = false;
-				boolean passCon = false;
-				String pass = String.copyValueOf(passwordField.getPassword());
-				while(chkUser||chkPass||passCon) {
-					String user = textFieldUser.getText().trim();
-					while(user.length()<6||user.length()>12) {
-						textFieldUser = new JTextField();
-					}
-					user = user.toLowerCase();
-					chkUser = true;
-					for(int i =0;i<user.length();i++) {
-						if((user.charAt(i)<'a'||user.charAt(i)>'z')||(user.charAt(i)<'0'||user.charAt(i)>'9')) {
-							chkUser=false;
-						}
-					}
-					pass = pass.trim();
-					int upperCount = 0, lowerCount = 0, numCount = 0;
-					while(pass.length()<8||upperCount<1||lowerCount<1||numCount<1) {
-						
-					}
-					chkPass = true;
-					for(int i = 0 ;i<pass.length();i++) {
-						upperCount = 0;
-						lowerCount = 0;
-						numCount = 0;
-						if (user.charAt(i) >= 'A' && user.charAt(i) <= 'Z') upperCount++;
-						if (user.charAt(i) >= 'a' && user.charAt(i) <= 'z') lowerCount++;
-						if (user.charAt(i) >= '0' && user.charAt(i) <= '9') numCount++;
-						if(upperCount<1||lowerCount<1||numCount<1) {
-							chkPass=false;
-						}
-					}
-					String passConfirm = String.copyValueOf(passwordConfirm.getPassword());
-					if(pass.equals(passConfirm)) {
-						passCon=true;
-					}
-				}
-				Customer cs= new Customer();
-				cs.setUser(textFieldUser.getText().trim());
-				cs.setPass(pass);
-				cs.register();
-				FirstPage main = new FirstPage();
-				main.setVisible(true);
-				main.setLocationRelativeTo(null);
-				main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				dispose();
-			}
-		});
 		btnSent.setBounds(736, 540, 120, 48);
 		contentPane.add(btnSent);
+		btnSent.addActionListener (new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String user = textFieldUser.getText();
+				String pass = passwordField.getText();
+				String passCon = passwordConfirm.getText();
+				CheckUser chkUser = new CheckUser();
+				CheckPassword chkPass = new CheckPassword();
+				//System.out.println(pass+" "+passCon);
+				//System.out.println(!chkPass.chkPass(pass)+" "+chkPass.chkCon(passCon));
+					if(!chkUser.chkUser(user)) {
+						textFieldUser.setText("Please input the right format");
+						textFieldUser.setForeground(Color.red);
+					}
+					if(!chkPass.chkPass(pass)) {
+						passwordField.setText("Please input the right format");
+						passwordField.setForeground(Color.red);
+					}
+					if(!chkPass.chkCon(passCon)) {
+						passwordConfirm.setText("");
+					}
+					
+				if(chkUser.chkUser(user)&&chkPass.chkPass(pass)&&chkPass.chkCon(passCon)) {
+					Customer cs= new Customer();
+					cs.setUser(textFieldUser.getText().trim());
+					cs.setPass(pass);
+					cs.register();
+					LoginPage lgp = new LoginPage();
+					lgp.setVisible(true);
+					lgp.setLocationRelativeTo(null);
+					lgp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					dispose();
+				}
+				
+			}
+		});
 		
 		JButton btnCancel = new JButton("CANCEL");
 		btnCancel.addMouseListener(new MouseAdapter() {
@@ -217,33 +207,45 @@ public class RegisterPage extends JFrame {
 		bg.setIcon(new ImageIcon("D:\\JavaProject\\Background\\regis.jpg"));
 		contentPane.add(bg);
 		
-		
 	}
 	
-	public boolean userChk() {
-		boolean chk = true;
-		String user = textFieldUser.getText();
-		while(user.length()<6||user.length()>12) {
-			textFieldUser = new JTextField();
-		}
-		user = user.toLowerCase();
-		for(int i =0;i<user.length();i++) {
-			if((user.charAt(i)<='a'||user.charAt(i)>='z')||(user.charAt(i)<='0'||user.charAt(i)>='9')) {
-				chk=false;
-			}
-		}
-		return chk;
+	public void addPlaceholderStyle (JTextField textField) {
+		Font font = textField.getFont();
+		font = font.deriveFont(Font.ITALIC);
+		textField.setFont(font);
+		textField.setForeground(Color.red);
 	}
 	
-	public boolean passConfirm(java.awt.event.ActionEvent evt) {
-		boolean chk = false;
-		String pass = passwordField.getPassword().toString().trim();
-		String passConfirm = passwordConfirm.getPassword().toString().trim();
-		if(pass.equals(passConfirm)) {
-			chk=true;
-		}
-		return chk;
+	public void removePlaceholderStyle (JTextField textField) {
+		Font font = textField.getFont();
+		font = font.deriveFont(Font.PLAIN|Font.BOLD);
+		textField.setFont(font);
+		textField.setForeground(Color.black);
 	}
 	
+	private void txtUserFocusGained(java.awt.event.FocusEvent evt) {
+		if(textFieldUser.getText().equals("Please input the right format")) {
+			textFieldUser.setText(null);
+			textFieldUser.requestFocus();
+			removePlaceholderStyle(textFieldUser);
+		}
+	}
 	
+	private void passwordFocusGained(java.awt.event.FocusEvent evt) {
+		if(passwordField.getText().equals("Please input the right format")) {
+			passwordField.setText(null);
+			passwordField.requestFocus();
+			passwordField.setEchoChar('●');
+			removePlaceholderStyle(passwordField);
+		}
+	}
+	
+	private void passwordConfirmFocusGained(java.awt.event.FocusEvent evt) {
+		if(passwordConfirm.getText().equals("Password doesn't match")) {
+			passwordConfirm.setText(null);
+			passwordConfirm.requestFocus();
+			passwordConfirm.setEchoChar('●');
+			removePlaceholderStyle(passwordConfirm);
+		}
+	}
 }

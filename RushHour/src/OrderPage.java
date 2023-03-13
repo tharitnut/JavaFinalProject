@@ -74,13 +74,15 @@ public class OrderPage extends JFrame {
 		lblAdditional.setBounds(189, 336, 201, 84);
 		contentPane.add(lblAdditional);
 		
-		JLabel lblGotMenu = new JLabel("คะน้าหมูกรอบ");
+		final Menu menu = new Menu();
+		
+		JLabel lblGotMenu = new JLabel(menu.getMenu());
 		lblGotMenu.setForeground(Color.RED);
 		lblGotMenu.setFont(new Font("TH Kodchasal", Font.BOLD, 40));
 		lblGotMenu.setBounds(416, 236, 363, 84);
 		contentPane.add(lblGotMenu);
 		
-		JLabel lblGotAdd = new JLabel("ขอหมูกรอบนอกนุ่มใน");
+		JLabel lblGotAdd = new JLabel(menu.getAddition());
 		lblGotAdd.setForeground(Color.RED);
 		lblGotAdd.setFont(new Font("TH Kodchasal", Font.BOLD, 40));
 		lblGotAdd.setBounds(416, 330, 363, 84);
@@ -91,7 +93,7 @@ public class OrderPage extends JFrame {
 		lblPrice.setBounds(416, 419, 125, 84);
 		contentPane.add(lblPrice);
 		
-		JLabel lblGotAdd_1 = new JLabel("50฿");
+		JLabel lblGotAdd_1 = new JLabel(Integer.toString(menu.getPrice()));
 		lblGotAdd_1.setForeground(Color.RED);
 		lblGotAdd_1.setFont(new Font("TH Kodchasal", Font.BOLD, 40));
 		lblGotAdd_1.setBounds(536, 413, 74, 84);
@@ -101,6 +103,7 @@ public class OrderPage extends JFrame {
 		btnOrder.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				menu.addMenu(menu.getMenu());
 				QrPage qr = new QrPage();
 				qr.setVisible(true);
 				qr.setLocationRelativeTo(null);

@@ -68,7 +68,7 @@ public class ChooseOption extends JFrame {
 		lblSpicy.setBounds(114, 132, 343, 71);
 		contentPane.add(lblSpicy);
 		
-		JRadioButton rdbtnExtra = new JRadioButton("Extra Spicy");
+		final JRadioButton rdbtnExtra = new JRadioButton("Extra Spicy");
 		rdbtnExtra.setContentAreaFilled(false);
 		rdbtnExtra.setBorder(null);
 		rdbtnExtra.setForeground(new Color(173, 63, 63));
@@ -77,7 +77,7 @@ public class ChooseOption extends JFrame {
 		rdbtnExtra.setBounds(102, 209, 272, 36);
 		contentPane.add(rdbtnExtra);
 
-		JRadioButton rdbtnSpicy = new JRadioButton("Spicy");
+		final JRadioButton rdbtnSpicy = new JRadioButton("Spicy");
 		rdbtnSpicy.setIconTextGap(20);
 		rdbtnSpicy.setForeground(new Color(173, 63, 63));
 		rdbtnSpicy.setFont(new Font("Century Gothic", Font.PLAIN, 28));
@@ -86,7 +86,7 @@ public class ChooseOption extends JFrame {
 		rdbtnSpicy.setBounds(102, 262, 272, 36);
 		contentPane.add(rdbtnSpicy);
 		
-		JRadioButton rdbtnMedium = new JRadioButton("Medium");
+		final JRadioButton rdbtnMedium = new JRadioButton("Medium");
 		rdbtnMedium.setIconTextGap(20);
 		rdbtnMedium.setForeground(new Color(173, 63, 63));
 		rdbtnMedium.setFont(new Font("Century Gothic", Font.PLAIN, 28));
@@ -95,7 +95,7 @@ public class ChooseOption extends JFrame {
 		rdbtnMedium.setBounds(102, 309, 272, 36);
 		contentPane.add(rdbtnMedium);
 		
-		JRadioButton rdbtnMild = new JRadioButton("Mild");
+		final JRadioButton rdbtnMild = new JRadioButton("Little");
 		rdbtnMild.setIconTextGap(20);
 		rdbtnMild.setForeground(new Color(173, 63, 63));
 		rdbtnMild.setFont(new Font("Century Gothic", Font.PLAIN, 28));
@@ -104,7 +104,7 @@ public class ChooseOption extends JFrame {
 		rdbtnMild.setBounds(102, 360, 272, 36);
 		contentPane.add(rdbtnMild);
 		
-		JRadioButton rdbtnNo = new JRadioButton("No Spicy");
+		final JRadioButton rdbtnNo = new JRadioButton("No Spicy");
 		rdbtnNo.setIconTextGap(20);
 		rdbtnNo.setForeground(new Color(173, 63, 63));
 		rdbtnNo.setFont(new Font("Century Gothic", Font.PLAIN, 28));
@@ -126,7 +126,7 @@ public class ChooseOption extends JFrame {
 		lblVegetable.setBounds(114, 462, 343, 71);
 		contentPane.add(lblVegetable);
 		
-		JRadioButton rdbtnWithout = new JRadioButton("Without Vegetables");
+		final JRadioButton rdbtnWithout = new JRadioButton("Without Vegetables");
 		rdbtnWithout.setIconTextGap(20);
 		rdbtnWithout.setForeground(new Color(173, 63, 63));
 		rdbtnWithout.setFont(new Font("Century Gothic", Font.PLAIN, 28));
@@ -148,43 +148,43 @@ public class ChooseOption extends JFrame {
 		groupVegetable.add(rdbtnWithout);
 		groupVegetable.add(rdbtnWith);
 		
-		JLabel lblEgg = new JLabel("ไข่ดาว(10฿)");
+		JLabel lblEgg = new JLabel("FRIED EGG(10฿)");
 		lblEgg.setForeground(new Color(173, 63, 63));
-		lblEgg.setFont(new Font("TH Kodchasal", Font.BOLD, 55));
-		lblEgg.setBounds(609, 133, 343, 71);
+		lblEgg.setFont(new Font("Monospaced", Font.BOLD, 46));
+		lblEgg.setBounds(609, 133, 377, 71);
 		contentPane.add(lblEgg);
 		
-		JRadioButton rdbtn1 = new JRadioButton("ไข่ดาวสุก");
-		rdbtn1.setIconTextGap(20);
-		rdbtn1.setForeground(new Color(173, 63, 63));
-		rdbtn1.setFont(new Font("TH Mali Grade 6", Font.BOLD, 44));
-		rdbtn1.setContentAreaFilled(false);
-		rdbtn1.setBorder(null);
-		rdbtn1.setBounds(576, 206, 272, 36);
-		contentPane.add(rdbtn1);
+		final JRadioButton rdbtnegg1 = new JRadioButton("Normal");
+		rdbtnegg1.setIconTextGap(20);
+		rdbtnegg1.setForeground(new Color(173, 63, 63));
+		rdbtnegg1.setFont(new Font("Century Gothic", Font.PLAIN, 28));
+		rdbtnegg1.setContentAreaFilled(false);
+		rdbtnegg1.setBorder(null);
+		rdbtnegg1.setBounds(576, 206, 272, 36);
+		contentPane.add(rdbtnegg1);
 		
-		JRadioButton rdbtn2 = new JRadioButton("ยางมะตูม");
-		rdbtn2.setIconTextGap(20);
-		rdbtn2.setForeground(new Color(173, 63, 63));
-		rdbtn2.setFont(new Font("TH Mali Grade 6", Font.BOLD, 44));
-		rdbtn2.setContentAreaFilled(false);
-		rdbtn2.setBorder(null);
-		rdbtn2.setBounds(576, 251, 272, 47);
-		contentPane.add(rdbtn2);
+		final JRadioButton rdbtnegg2 = new JRadioButton("Sunny Side Up");
+		rdbtnegg2.setIconTextGap(20);
+		rdbtnegg2.setForeground(new Color(173, 63, 63));
+		rdbtnegg2.setFont(new Font("Century Gothic", Font.PLAIN, 28));
+		rdbtnegg2.setContentAreaFilled(false);
+		rdbtnegg2.setBorder(null);
+		rdbtnegg2.setBounds(576, 251, 272, 47);
+		contentPane.add(rdbtnegg2);
 		
-		JRadioButton rdbtn3 = new JRadioButton("ไม่เพิ่มไข่ดาว");
-		rdbtn3.setIconTextGap(20);
-		rdbtn3.setForeground(new Color(173, 63, 63));
-		rdbtn3.setFont(new Font("TH Mali Grade 6", Font.BOLD, 44));
-		rdbtn3.setContentAreaFilled(false);
-		rdbtn3.setBorder(null);
-		rdbtn3.setBounds(576, 302, 272, 36);
-		contentPane.add(rdbtn3);
+		final JRadioButton rdbtnegg3 = new JRadioButton("No Egg");
+		rdbtnegg3.setIconTextGap(20);
+		rdbtnegg3.setForeground(new Color(173, 63, 63));
+		rdbtnegg3.setFont(new Font("Century Gothic", Font.PLAIN, 28));
+		rdbtnegg3.setContentAreaFilled(false);
+		rdbtnegg3.setBorder(null);
+		rdbtnegg3.setBounds(576, 302, 272, 36);
+		contentPane.add(rdbtnegg3);
 		
 		ButtonGroup groupEgg = new ButtonGroup();
-		groupEgg.add(rdbtn1);
-		groupEgg.add(rdbtn2);
-		groupEgg.add(rdbtn3);
+		groupEgg.add(rdbtnegg1);
+		groupEgg.add(rdbtnegg2);
+		groupEgg.add(rdbtnegg3);
 		
 		JLabel lblAdditional = new JLabel("Additional");
 		lblAdditional.setForeground(new Color(173, 63, 63));
@@ -200,10 +200,40 @@ public class ChooseOption extends JFrame {
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
+		final Menu menu = new Menu();
+		
 		JButton btnNext = new JButton("NEXT");
 		btnNext.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				if(rdbtnExtra.isSelected()) {
+					menu.plusSpicy(5);
+				}
+				if (rdbtnSpicy.isSelected()) {
+					menu.plusSpicy(4);
+				}
+				if (rdbtnMedium.isSelected()) {
+					menu.plusSpicy(3);
+				}
+				if (rdbtnMild.isSelected()) {
+					menu.plusSpicy(2);
+				}
+				if (rdbtnNo.isSelected()) {
+					menu.plusSpicy(1);
+				}
+				if(rdbtnWithout.isSelected()) {
+					menu.plusVeg(1);
+				}
+				if(rdbtnegg1.isSelected()) {
+					menu.plusTopping(1);
+				}
+				if(rdbtnegg2.isSelected()) {
+					menu.plusTopping(2);
+				}
+				if(rdbtnegg3.isSelected()) {
+					menu.plusTopping(3);
+				}
+				
 				OrderPage op = new OrderPage();
 				op.setVisible(true);
 				op.setLocationRelativeTo(null);
@@ -224,6 +254,8 @@ public class ChooseOption extends JFrame {
 		bg.setBounds(-7, -8, 1100, 700);
 		bg.setIcon(new ImageIcon("D:\\JavaProject\\Background\\optionSelect.jpg"));
 		contentPane.add(bg);
+		
+		
 
 	}
 }
