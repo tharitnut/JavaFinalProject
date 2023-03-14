@@ -70,7 +70,7 @@ public class AdminPage extends JFrame {
 		scrollPane.setBounds(86, 173, 938, 315);
 		getContentPane().add(scrollPane);
 		JTable table = new JTable();
-		table.setFont(new Font("TH Chakra Petch", Font.BOLD, 30));
+		table.setFont(new Font("TH Chakra Petch", Font.BOLD, 25));
 		
 		DefaultTableModel model = new DefaultTableModel();
 		model.addColumn("ORDER");

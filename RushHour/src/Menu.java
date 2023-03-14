@@ -42,7 +42,7 @@ public class Menu {
 	}
 
 	public void randomMenu() {
-		String[] menuBeforeMeat = { "Pad Krapao ", "Kaopad ", "Pad Kana " };
+		String[] menuBeforeMeat = { "Pad Kraprao ", "Kaopad ", "Pad Kana " };
 		String[] menuAfterMeat = { " Tod Gratiem", " Pad Prigkleur", " Pad Nammunhoi", " Pad priggaeng" };
 		String[][] allMenu = { menuBeforeMeat, menuAfterMeat };
 		Random rand = new Random();
