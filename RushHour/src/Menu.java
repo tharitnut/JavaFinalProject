@@ -8,15 +8,21 @@ public class Menu {
 	private String menu;
 	private String addition;
 	private int price;
+	private String topping;
 
 	public Menu() {
 		menu = "";
 		addition = "";
 		price = 0;
+		topping = "";
 	}
 
 	public String getMenu() {
 		return menu;
+	}
+	
+	public String getTopping(){
+		return topping;
 	}
 
 	public void setAddtion(String addition) {
@@ -82,34 +88,34 @@ public class Menu {
 
 	public void plusSpicy(int spicy) {
 		if (spicy == 1)
-			menu += " No Spicy";
+			topping += " No Spicy";
 
 		else if (spicy == 2)
-			menu += " Little Spicy";
+			topping += " Little Spicy";
 
 		else if (spicy == 3)
-			menu += " Medium Spicy";
+			topping += " Medium Spicy";
 
 		else if (spicy == 4)
-			menu += " Spicy";
+			topping += " Spicy";
 
 		else if (spicy == 5)
-			menu += " Extra Spicy";
+			topping += " Extra Spicy";
 
 	}
 
 	public void plusVeg(int veg) {
 		if (veg == 1) {
-			menu += " No Vegetable";
+			topping += " No Vegetable";
 		}
 	}
 
-	public void plusTopping(int topping) {
-		if (topping == 1) {
-			menu += " With Normal Fried Egg";
+	public void plusTopping(int _topping) {
+		if (_topping == 1) {
+			topping += " With Normal Fried Egg";
 			price += 10;
-		} else if (topping == 2) {
-			menu += " With Sunny Side Up Egg";
+		} else if (_topping == 2) {
+			topping += " With Sunny Side Up Egg";
 			price += 10;
 		}
 	}

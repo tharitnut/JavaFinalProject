@@ -59,7 +59,7 @@ public class LoginPage extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\NotBackground\\rushhour.jpg"));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		final JLabel lblError = new JLabel("No user found. Please try again or register.");
 		lblError.setForeground(new Color(173, 63, 63));
 		lblError.setBackground(new Color(255, 255, 255));
@@ -67,12 +67,12 @@ public class LoginPage extends JFrame {
 		lblError.setBounds(335, 145, 751, 60);
 		contentPane.add(lblError);
 		lblError.setVisible(false);
-		
+
 		JLabel lblTitleLogin = new JLabel("LOGIN");
 		lblTitleLogin.setFont(new Font("Cooper Black", Font.BOLD, 99));
 		lblTitleLogin.setForeground(new Color(173, 63, 63));
 		lblTitleLogin.setBounds(524, 48, 397, 112);
-		contentPane.add(lblTitleLogin);		
+		contentPane.add(lblTitleLogin);
 
 		JLabel lblEnterUser = new JLabel("Please enter Username");
 		lblEnterUser.setForeground(new Color(173, 63, 63));
@@ -86,13 +86,13 @@ public class LoginPage extends JFrame {
 		txtField.setFont(new Font("Comic Sans MS", Font.PLAIN, 30));
 		txtField.setBounds(479, 254, 498, 60);
 		contentPane.add(txtField);
-		
+
 		final JLabel lblEnterPass = new JLabel("Please enter Password");
 		lblEnterPass.setForeground(new Color(173, 63, 63));
 		lblEnterPass.setFont(new Font("Monospaced", Font.BOLD, 25));
 		lblEnterPass.setBounds(479, 341, 408, 48);
 		contentPane.add(lblEnterPass);
-		
+
 		passwordField = new JPasswordField();
 		passwordField.setBackground(new Color(241, 186, 92));
 		passwordField.setBorder(null);
@@ -100,9 +100,7 @@ public class LoginPage extends JFrame {
 		passwordField.setFont(new Font("Comic Sans MS", Font.PLAIN, 30));
 		passwordField.setBounds(479, 399, 498, 60);
 		contentPane.add(passwordField);
-		
-		
-		
+
 		JButton btnLogin = new JButton("LOGIN");
 		btnLogin.setBackground(new Color(255, 248, 229));
 		btnLogin.setForeground(Color.black);
@@ -110,17 +108,15 @@ public class LoginPage extends JFrame {
 		btnLogin.setFont(new Font("Gloucester MT Extra Condensed", Font.BOLD, 30));
 		btnLogin.setBounds(772, 513, 122, 54);
 		contentPane.add(btnLogin);
-		btnLogin.addActionListener (new ActionListener() {
+		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Customer cs = new Customer();
 				try {
-					if(!cs.isRegister(txtField.getText(),passwordField.getText())) {
-						System.out.println("kuy");
+					if (!cs.isRegister(txtField.getText(), passwordField.getText())) {
 						lblError.setVisible(true);
 						txtField.setText("");
 						passwordField.setText("");
-					}
-					else {
+					} else {
 						ChooseMain cm = new ChooseMain();
 						cm.setVisible(true);
 						cm.setLocationRelativeTo(null);
@@ -134,7 +130,7 @@ public class LoginPage extends JFrame {
 				cs.setRegis(true);
 			}
 		});
-		
+
 		JButton btnCancel = new JButton("CANCEL");
 		btnCancel.addMouseListener(new MouseAdapter() {
 			@Override
@@ -152,12 +148,12 @@ public class LoginPage extends JFrame {
 		btnCancel.setBackground(new Color(255, 248, 229));
 		btnCancel.setBounds(555, 513, 122, 54);
 		contentPane.add(btnCancel);
-		
+
 		JLabel lblDontHaveAn = new JLabel("Don't have an account?");
 		lblDontHaveAn.setFont(new Font("UD Digi Kyokasho N-B", Font.PLAIN, 25));
 		lblDontHaveAn.setBounds(468, 584, 350, 60);
 		contentPane.add(lblDontHaveAn);
-		
+
 		JLabel lblRegister = new JLabel("Register");
 		lblRegister.addMouseListener(new MouseAdapter() {
 			@Override
@@ -173,12 +169,11 @@ public class LoginPage extends JFrame {
 		lblRegister.setFont(new Font("UD Digi Kyokasho NP-B", Font.ITALIC, 30));
 		lblRegister.setBounds(772, 589, 170, 48);
 		contentPane.add(lblRegister);
-		
+
 		JLabel bg = new JLabel("");
 		bg.setBounds(0, -26, 1100, 700);
 		bg.setIcon(new ImageIcon("D:\\JavaProject\\Background\\login.jpg"));
-		contentPane.add(bg);	
-		
-		
+		contentPane.add(bg);
+
 	}
 }

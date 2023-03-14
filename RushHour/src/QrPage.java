@@ -1,5 +1,4 @@
 
-
 import java.awt.EventQueue;
 import java.awt.Toolkit;
 
@@ -49,12 +48,12 @@ public class QrPage extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\NotBackground\\rushhour.jpg"));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\suppost to be Qr.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("D:\\JavaProject\\NotBackground\\QrCode.png"));
 		lblNewLabel.setBounds(293, 130, 500, 469);
 		contentPane.add(lblNewLabel);
-		
+
 		JButton btnLogout = new JButton("LOGOUT");
 		btnLogout.addMouseListener(new MouseAdapter() {
 			@Override
@@ -74,11 +73,11 @@ public class QrPage extends JFrame {
 		btnLogout.setBackground(new Color(182, 35, 15));
 		btnLogout.setBounds(768, 60, 197, 60);
 		contentPane.add(btnLogout);
-		
+
 		JLabel bg = new JLabel("");
 		bg.setBounds(-7, -18, 1100, 700);
 		bg.setIcon(new ImageIcon("D:\\JavaProject\\Background\\Qr.jpg"));
-		contentPane.add(bg);	
+		contentPane.add(bg);
 	}
 
 }

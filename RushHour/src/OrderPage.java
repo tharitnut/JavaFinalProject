@@ -1,5 +1,4 @@
 
-
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -17,6 +16,7 @@ import javax.swing.border.CompoundBorder;
 import java.awt.ComponentOrientation;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 public class OrderPage extends JFrame {
 
@@ -40,8 +40,10 @@ public class OrderPage extends JFrame {
 
 	/**
 	 * Create the frame.
+	 * 
+	 * @throws IOException
 	 */
-	public OrderPage() {
+	public OrderPage() throws IOException {
 		setTitle("Rush Hour");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1100, 700);
@@ -51,7 +53,7 @@ public class OrderPage extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\NotBackground\\rushhour.jpg"));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblOrder_1 = new JLabel("ORDER");
 		lblOrder_1.setForeground(new Color(182, 35, 15));
 		lblOrder_1.setFont(new Font("Cooper Black", Font.PLAIN, 70));
@@ -63,42 +65,43 @@ public class OrderPage extends JFrame {
 		lblOrder.setFont(new Font("Cooper Black", Font.PLAIN, 70));
 		lblOrder.setBounds(410, 160, 275, 54);
 		contentPane.add(lblOrder);
-		
+
 		JLabel lblMenu = new JLabel("Menu");
 		lblMenu.setFont(new Font("Sitka Text", Font.BOLD, 37));
 		lblMenu.setBounds(189, 242, 116, 84);
 		contentPane.add(lblMenu);
-		
+
 		JLabel lblAdditional = new JLabel("Additional");
 		lblAdditional.setFont(new Font("Sitka Text", Font.BOLD, 37));
 		lblAdditional.setBounds(189, 336, 201, 84);
 		contentPane.add(lblAdditional);
-		
+
 		final Menu menu = new Menu();
-		
-		JLabel lblGotMenu = new JLabel(menu.getMenu());
+		Customer cs = new Customer();
+
+		JLabel lblGotMenu = new JLabel(menu.getMenu() + " " + menu.getTopping());
 		lblGotMenu.setForeground(Color.RED);
 		lblGotMenu.setFont(new Font("Sitka Text", Font.BOLD, 26));
 		lblGotMenu.setBounds(416, 236, 566, 84);
 		contentPane.add(lblGotMenu);
-		
+
 		JLabel lblGotAdd = new JLabel(menu.getAddition());
 		lblGotAdd.setForeground(Color.RED);
 		lblGotAdd.setFont(new Font("Sitka Text", Font.BOLD, 26));
 		lblGotAdd.setBounds(416, 330, 363, 84);
 		contentPane.add(lblGotAdd);
-		
+
 		JLabel lblPrice = new JLabel("Price");
 		lblPrice.setFont(new Font("Sitka Text", Font.BOLD, 37));
 		lblPrice.setBounds(416, 419, 125, 84);
 		contentPane.add(lblPrice);
-		
-		JLabel lblGotAdd_1 = new JLabel(Integer.toString(menu.getPrice()));
+
+		JLabel lblGotAdd_1 = new JLabel(Integer.toString(menu.getPrice() - cs.discount(cs.getUser(), cs.getPass())));
 		lblGotAdd_1.setForeground(Color.RED);
 		lblGotAdd_1.setFont(new Font("Comic Sans MS", Font.BOLD, 26));
 		lblGotAdd_1.setBounds(551, 413, 74, 84);
 		contentPane.add(lblGotAdd_1);
-		
+
 		JButton btnOrder = new JButton("ORDER");
 		btnOrder.addMouseListener(new MouseAdapter() {
 			@Override
@@ -118,7 +121,7 @@ public class OrderPage extends JFrame {
 		btnOrder.setBackground(new Color(255, 179, 33));
 		btnOrder.setBounds(592, 514, 197, 60);
 		contentPane.add(btnOrder);
-		
+
 		JButton btnCancel = new JButton("CANCEL");
 		btnCancel.addMouseListener(new MouseAdapter() {
 			@Override
@@ -137,7 +140,7 @@ public class OrderPage extends JFrame {
 		btnCancel.setBackground(new Color(255, 179, 33));
 		btnCancel.setBounds(296, 513, 197, 60);
 		contentPane.add(btnCancel);
-		
+
 		JLabel bg = new JLabel("");
 		bg.setBounds(-7, -18, 1100, 700);
 		bg.setIcon(new ImageIcon("D:\\JavaProject\\Background\\order.jpg"));

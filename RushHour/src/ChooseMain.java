@@ -192,7 +192,6 @@ public class ChooseMain extends JFrame {
 		btnNext.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				menu.randomMenu();
 				if(rdbtnPork.isSelected()) {
 					menu.selectMeat(1);
 				}
@@ -217,6 +216,7 @@ public class ChooseMain extends JFrame {
 				else if(rdbtnSeafood.isSelected()) {
 					menu.selectMeat(8);
 				}
+				menu.randomMenu();
 				ChooseOption cp = new ChooseOption();
 				cp.setVisible(true);
 				cp.setLocationRelativeTo(null);
@@ -239,18 +239,6 @@ public class ChooseMain extends JFrame {
 		contentPane.add(bg);
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-				
-		
-		
-		
 	}
+
 }

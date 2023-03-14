@@ -1,11 +1,11 @@
 
-
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -52,22 +52,23 @@ public class ChooseOption extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\NotBackground\\rushhour.jpg"));setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\rushh.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\NotBackground\\rushhour.jpg"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("D:\\JavaProject\\rushh.jpg"));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lbltaste = new JLabel("YOUR TASTE");
 		lbltaste.setForeground(new Color(182, 35, 15));
 		lbltaste.setFont(new Font("Cooper Black", Font.PLAIN, 70));
 		lbltaste.setBounds(277, 46, 531, 54);
 		contentPane.add(lbltaste);
-		
+
 		JLabel lblSpicy = new JLabel("SPICY LEVEL");
 		lblSpicy.setForeground(new Color(173, 63, 63));
 		lblSpicy.setFont(new Font("Monospaced", Font.BOLD, 46));
 		lblSpicy.setBounds(114, 132, 343, 71);
 		contentPane.add(lblSpicy);
-		
+
 		final JRadioButton rdbtnExtra = new JRadioButton("Extra Spicy");
 		rdbtnExtra.setContentAreaFilled(false);
 		rdbtnExtra.setBorder(null);
@@ -85,7 +86,7 @@ public class ChooseOption extends JFrame {
 		rdbtnSpicy.setBorder(null);
 		rdbtnSpicy.setBounds(102, 262, 272, 36);
 		contentPane.add(rdbtnSpicy);
-		
+
 		final JRadioButton rdbtnMedium = new JRadioButton("Medium");
 		rdbtnMedium.setIconTextGap(20);
 		rdbtnMedium.setForeground(new Color(173, 63, 63));
@@ -94,7 +95,7 @@ public class ChooseOption extends JFrame {
 		rdbtnMedium.setBorder(null);
 		rdbtnMedium.setBounds(102, 309, 272, 36);
 		contentPane.add(rdbtnMedium);
-		
+
 		final JRadioButton rdbtnMild = new JRadioButton("Little");
 		rdbtnMild.setIconTextGap(20);
 		rdbtnMild.setForeground(new Color(173, 63, 63));
@@ -103,7 +104,7 @@ public class ChooseOption extends JFrame {
 		rdbtnMild.setBorder(null);
 		rdbtnMild.setBounds(102, 360, 272, 36);
 		contentPane.add(rdbtnMild);
-		
+
 		final JRadioButton rdbtnNo = new JRadioButton("No Spicy");
 		rdbtnNo.setIconTextGap(20);
 		rdbtnNo.setForeground(new Color(173, 63, 63));
@@ -112,20 +113,20 @@ public class ChooseOption extends JFrame {
 		rdbtnNo.setBorder(null);
 		rdbtnNo.setBounds(102, 406, 272, 36);
 		contentPane.add(rdbtnNo);
-		
+
 		ButtonGroup groupSpicy = new ButtonGroup();
 		groupSpicy.add(rdbtnExtra);
 		groupSpicy.add(rdbtnSpicy);
 		groupSpicy.add(rdbtnMedium);
 		groupSpicy.add(rdbtnMild);
 		groupSpicy.add(rdbtnNo);
-		
+
 		JLabel lblVegetable = new JLabel("VEGETABLES");
 		lblVegetable.setForeground(new Color(173, 63, 63));
 		lblVegetable.setFont(new Font("Monospaced", Font.BOLD, 46));
 		lblVegetable.setBounds(114, 462, 343, 71);
 		contentPane.add(lblVegetable);
-		
+
 		final JRadioButton rdbtnWithout = new JRadioButton("Without Vegetables");
 		rdbtnWithout.setIconTextGap(20);
 		rdbtnWithout.setForeground(new Color(173, 63, 63));
@@ -134,7 +135,7 @@ public class ChooseOption extends JFrame {
 		rdbtnWithout.setBorder(null);
 		rdbtnWithout.setBounds(103, 543, 343, 36);
 		contentPane.add(rdbtnWithout);
-		
+
 		JRadioButton rdbtnWith = new JRadioButton("With Vegetables");
 		rdbtnWith.setIconTextGap(20);
 		rdbtnWith.setForeground(new Color(173, 63, 63));
@@ -143,17 +144,17 @@ public class ChooseOption extends JFrame {
 		rdbtnWith.setBorder(null);
 		rdbtnWith.setBounds(103, 593, 272, 36);
 		contentPane.add(rdbtnWith);
-		
+
 		ButtonGroup groupVegetable = new ButtonGroup();
 		groupVegetable.add(rdbtnWithout);
 		groupVegetable.add(rdbtnWith);
-		
+
 		JLabel lblEgg = new JLabel("FRIED EGG(10฿)");
 		lblEgg.setForeground(new Color(173, 63, 63));
 		lblEgg.setFont(new Font("Monospaced", Font.BOLD, 46));
 		lblEgg.setBounds(609, 133, 377, 71);
 		contentPane.add(lblEgg);
-		
+
 		final JRadioButton rdbtnegg1 = new JRadioButton("Normal");
 		rdbtnegg1.setIconTextGap(20);
 		rdbtnegg1.setForeground(new Color(173, 63, 63));
@@ -162,7 +163,7 @@ public class ChooseOption extends JFrame {
 		rdbtnegg1.setBorder(null);
 		rdbtnegg1.setBounds(576, 206, 272, 36);
 		contentPane.add(rdbtnegg1);
-		
+
 		final JRadioButton rdbtnegg2 = new JRadioButton("Sunny Side Up");
 		rdbtnegg2.setIconTextGap(20);
 		rdbtnegg2.setForeground(new Color(173, 63, 63));
@@ -171,7 +172,7 @@ public class ChooseOption extends JFrame {
 		rdbtnegg2.setBorder(null);
 		rdbtnegg2.setBounds(576, 251, 272, 47);
 		contentPane.add(rdbtnegg2);
-		
+
 		final JRadioButton rdbtnegg3 = new JRadioButton("No Egg");
 		rdbtnegg3.setIconTextGap(20);
 		rdbtnegg3.setForeground(new Color(173, 63, 63));
@@ -180,18 +181,18 @@ public class ChooseOption extends JFrame {
 		rdbtnegg3.setBorder(null);
 		rdbtnegg3.setBounds(576, 302, 272, 36);
 		contentPane.add(rdbtnegg3);
-		
+
 		ButtonGroup groupEgg = new ButtonGroup();
 		groupEgg.add(rdbtnegg1);
 		groupEgg.add(rdbtnegg2);
 		groupEgg.add(rdbtnegg3);
-		
+
 		JLabel lblAdditional = new JLabel("Additional");
 		lblAdditional.setForeground(new Color(173, 63, 63));
 		lblAdditional.setFont(new Font("Monospaced", Font.BOLD, 46));
 		lblAdditional.setBounds(491, 337, 343, 71);
 		contentPane.add(lblAdditional);
-		
+
 		textField = new JTextField();
 		textField.setFont(new Font("TH Kodchasal", Font.PLAIN, 30));
 		textField.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
@@ -199,14 +200,15 @@ public class ChooseOption extends JFrame {
 		textField.setBounds(495, 439, 508, 144);
 		contentPane.add(textField);
 		textField.setColumns(10);
-		
+
 		final Menu menu = new Menu();
-		
+
 		JButton btnNext = new JButton("NEXT");
 		btnNext.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(rdbtnExtra.isSelected()) {
+				System.out.println(menu.getMenu());
+				if (rdbtnExtra.isSelected()) {
 					menu.plusSpicy(5);
 				}
 				if (rdbtnSpicy.isSelected()) {
@@ -221,25 +223,31 @@ public class ChooseOption extends JFrame {
 				if (rdbtnNo.isSelected()) {
 					menu.plusSpicy(1);
 				}
-				if(rdbtnWithout.isSelected()) {
+				if (rdbtnWithout.isSelected()) {
 					menu.plusVeg(1);
 				}
-				if(rdbtnegg1.isSelected()) {
+				if (rdbtnegg1.isSelected()) {
 					menu.plusTopping(1);
 				}
-				if(rdbtnegg2.isSelected()) {
+				if (rdbtnegg2.isSelected()) {
 					menu.plusTopping(2);
 				}
-				if(rdbtnegg3.isSelected()) {
+				if (rdbtnegg3.isSelected()) {
 					menu.plusTopping(3);
 				}
 				menu.setAddtion(textField.getText());
-				
-				OrderPage op = new OrderPage();
-				op.setVisible(true);
-				op.setLocationRelativeTo(null);
-				op.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				dispose();
+				System.out.println(menu.getTopping());
+				OrderPage op;
+				try {
+					op = new OrderPage();
+					op.setVisible(true);
+					op.setLocationRelativeTo(null);
+					op.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					dispose();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 
 			}
 		});
@@ -249,14 +257,12 @@ public class ChooseOption extends JFrame {
 		btnNext.setBackground(new Color(255, 248, 229));
 		btnNext.setBounds(842, 608, 122, 54);
 		contentPane.add(btnNext);
-		
+
 		JLabel bg = new JLabel("");
 		bg.setFont(new Font("TH Kodchasal", Font.PLAIN, 30));
 		bg.setBounds(-7, -8, 1100, 700);
 		bg.setIcon(new ImageIcon("D:\\JavaProject\\Background\\optionSelect.jpg"));
 		contentPane.add(bg);
-		
-		
 
 	}
 }
