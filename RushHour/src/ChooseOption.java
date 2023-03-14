@@ -236,7 +236,6 @@ public class ChooseOption extends JFrame {
 					menu.plusTopping(3);
 				}
 				menu.setAddtion(textField.getText());
-				System.out.println(menu.getTopping());
 				OrderPage op;
 				try {
 					op = new OrderPage();

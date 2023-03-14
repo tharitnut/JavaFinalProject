@@ -111,6 +111,13 @@ public class LoginPage extends JFrame {
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Customer cs = new Customer();
+				if(txtField.getText().equals("Labinstall")&&passwordField.getText().equals("Tni12345")) {
+					AdminPage ap = new AdminPage();
+					ap.setVisible(true);
+					ap.setLocationRelativeTo(null);
+					ap.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+					dispose();
+				}
 				try {
 					if (!cs.isRegister(txtField.getText(), passwordField.getText())) {
 						lblError.setVisible(true);

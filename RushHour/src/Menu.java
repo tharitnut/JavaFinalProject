@@ -9,6 +9,8 @@ public class Menu {
 	private String addition;
 	private int price;
 	private String topping;
+	private String[] menuBeforeMeat;
+	private String[] menuAfterMeat;
 
 	public Menu() {
 		menu = "";
@@ -42,8 +44,8 @@ public class Menu {
 	}
 
 	public void randomMenu() {
-		String[] menuBeforeMeat = { "Pad Kraprao ", "Kaopad ", "Pad Kana " };
-		String[] menuAfterMeat = { " Tod Gratiem", " Pad Prigkleur", " Pad Nammunhoi", " Pad priggaeng" };
+		menuBeforeMeat = new String[]  { "Pad Kraprao ", "Kaopad ", "Pad Kana " };
+		menuAfterMeat = new String[]  { " Tod Gratiem", " Pad Prigkleur", " Pad Nammunhoi", " Pad priggaeng" };
 		String[][] allMenu = { menuBeforeMeat, menuAfterMeat };
 		Random rand = new Random();
 		int _menu = rand.nextInt(allMenu.length);
@@ -51,37 +53,37 @@ public class Menu {
 		int meatMenu;
 		if (_menu == 0) {
 			menuMeat = rand.nextInt(menuBeforeMeat.length);
-			menu = menuBeforeMeat[menuMeat] + menu;
+			this.menu = menuBeforeMeat[menuMeat] + this.menu;
 		} else {
 			meatMenu = rand.nextInt(menuAfterMeat.length);
-			menu += menuAfterMeat[meatMenu];
+			this.menu += menuAfterMeat[meatMenu];
 		}
 	}
 
 	public void selectMeat(int meat) {
 		if (meat == 1) {
-			menu += "Pork";
+			this.menu += "Pork";
 			price += 45;
 		} else if (meat == 2) {
-			menu += "Crispy Pork";
+			this.menu += "Crispy Pork";
 			price += 50;
 		} else if (meat == 3) {
-			menu += "Beef";
+			this.menu += "Beef";
 			price += 50;
 		} else if (meat == 4) {
-			menu += "Chicken";
+			this.menu += "Chicken";
 			price += 45;
 		} else if (meat == 5) {
-			menu += "Shrimp";
+			this.menu += "Shrimp";
 			price += 50;
 		} else if (meat == 6) {
-			menu += "Squid";
+			this.menu += "Squid";
 			price += 50;
 		} else if (meat == 7) {
-			menu += "Fish";
+			this.menu += "Fish";
 			price += 45;
 		} else if (meat == 8) {
-			menu += "Seafood";
+			this.menu += "Seafood";
 			price += 50;
 		}
 	}
